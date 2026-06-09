@@ -209,11 +209,7 @@ fn render(score: i16, player: &Entity, enemy: &Entity, loot: &Entity, health: u8
     buffer[((player.x as usize) + 1) + 13 * ((player.y as usize) + 1)] = '@';
     buffer[((enemy.x as usize) + 1) + 13 * ((enemy.y as usize) + 1)] = '!';
     buffer[((loot.x as usize) + 1) + 13 * ((loot.y as usize) + 1)] = '$';
-    println!(
-        "{}, {}, {}, {}, {}, {}",
-        player.x, player.y, enemy.x, enemy.y, loot.x, loot.y
-    );
-
+    
     let _ = write!(stdout(), "{}", MoveTo(0, 0));
     let _ = write!(stdout(), "{:<4}", score);
 
